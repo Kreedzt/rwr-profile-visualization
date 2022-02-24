@@ -6,10 +6,16 @@ import "./TimePlayed.css";
 
 const LABELS: string[] = [
   "100 分钟内",
-  "200 分钟内",
   "300 分钟内",
-  "400 分钟内",
-  ">= 400 分钟",
+  "500 分钟内",
+  "700 分钟内",
+  "900 分钟内",
+  "1100 分钟内",
+  "1300 分钟内",
+  "1500 分钟内",
+  "1700 分钟内",
+  "1900 分钟内",
+  ">= 1900 分钟",
 ];
 
 const TimePlayed: FC = () => {
@@ -30,26 +36,55 @@ const TimePlayed: FC = () => {
   }, []);
 
   const refreshCharts = useCallback(() => {
-    const chartsValue: [number, number, number, number, number] = [
-      0, 0, 0, 0, 0,
-    ];
+    const chartsValue: [
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number
+    ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     currentValue.forEach(([id, person, profile]) => {
       // < 100 Minutes
-      if (profile.stats.time_played < 10000) {
+      if (profile.stats.time_played < 1 * 10000) {
         chartsValue[0] += 1;
-        // < 200 Minutes
-      } else if (profile.stats.time_played <= 20000) {
-        chartsValue[1] += 1;
         // < 300 Minutes
-      } else if (profile.stats.time_played <= 30000) {
+      } else if (profile.stats.time_played < 3 * 10000) {
+        chartsValue[1] += 1;
+        // < 500 Minutes
+      } else if (profile.stats.time_played < 5 * 10000) {
         chartsValue[2] += 1;
-        // < 400 Minutes
-      } else if (profile.stats.time_played <= 40000) {
+        // < 700 Minutes
+      } else if (profile.stats.time_played < 7 * 10000) {
         chartsValue[3] += 1;
-        // >= 400 Minutes
-      } else {
+        // < 900 Minutes
+      } else if (profile.stats.time_played < 9 * 10000) {
         chartsValue[4] += 1;
+        // < 1100 Minutes
+      } else if (profile.stats.time_played < 11 * 10000) {
+        chartsValue[5] += 1;
+        // < 1300 Minutes
+      } else if (profile.stats.time_played < 13 * 10000) {
+        chartsValue[6] += 1;
+        // < 1500 Minutes
+      } else if (profile.stats.time_played < 15 * 10000) {
+        chartsValue[7] += 1;
+        // < 1700 Minutes
+      } else if (profile.stats.time_played < 17 * 10000) {
+        chartsValue[8] += 1;
+        // < 1900 Minutes
+      } else if (profile.stats.time_played < 19 * 10000) {
+        chartsValue[9] += 1;
+        // > 1900 Minutes
+      } else {
+        chartsValue[10] += 1;
       }
     });
 
@@ -108,7 +143,7 @@ const TimePlayed: FC = () => {
       },
       series: [
         {
-          name: '游玩时间柱状图',
+          name: "游玩时间柱状图",
           data: chartsValue,
           type: "bar",
         },

@@ -9,7 +9,13 @@ const LABELS: string[] = [
   "3 星人形",
   "4 星人形",
   "5 星人形",
-  ">= 6 星人形",
+  "6 星人形",
+  "1 月人形",
+  "2 月人形",
+  "3 月人形",
+  "4 月人形",
+  "5 月人形",
+  "1 日人形",
 ];
 
 const XP: FC = () => {
@@ -30,9 +36,20 @@ const XP: FC = () => {
   }, []);
 
   const refreshCharts = useCallback(() => {
-    const chartsValue: [number, number, number, number, number] = [
-      0, 0, 0, 0, 0,
-    ];
+    const chartsValue: [
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number,
+      number
+    ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     currentValue.forEach(([id, person, profile]) => {
       // < 1 0000 XP => 2 Starts
@@ -47,9 +64,24 @@ const XP: FC = () => {
         // < 100 0000 XP => 5 Starts
       } else if (person.authority <= 100) {
         chartsValue[3] += 1;
-        // < 200 0000 XP => 6 Starts
-      } else {
+        // < 200 0000 XP => 1 month
+      } else if (person.authority <= 200) {
         chartsValue[4] += 1;
+        // < 300 0000 XP => 2 month
+      } else if (person.authority <= 300) {
+        chartsValue[5] += 1;
+        // < 400 0000 XP => 3 month
+      } else if (person.authority <= 400) {
+        chartsValue[6] += 1;
+        // < 500 0000 XP => 4 month
+      } else if (person.authority <= 500) {
+        chartsValue[7] += 1;
+        // < 750 0000 XP => 5 month
+      } else if (person.authority <= 750) {
+        chartsValue[8] += 1;
+        // >= 300 0000 XP => 1 sun
+      } else {
+        chartsValue[9] += 1;
       }
     });
 
@@ -108,7 +140,7 @@ const XP: FC = () => {
       },
       series: [
         {
-          name: 'XP 统计柱状图',
+          name: "XP 统计柱状图",
           data: chartsValue,
           type: "bar",
         },
