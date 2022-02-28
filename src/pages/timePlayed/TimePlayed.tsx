@@ -5,17 +5,17 @@ import { EChartsType } from "echarts";
 import "./TimePlayed.css";
 
 const LABELS: string[] = [
-  "100 分钟内",
-  "300 分钟内",
   "500 分钟内",
-  "700 分钟内",
-  "900 分钟内",
-  "1100 分钟内",
-  "1300 分钟内",
+  "1000 分钟内",
   "1500 分钟内",
-  "1700 分钟内",
-  "1900 分钟内",
-  ">= 1900 分钟",
+  "2000 分钟内",
+  "2500 分钟内",
+  "3000 分钟内",
+  "3500 分钟内",
+  "4000 分钟内",
+  "4500 分钟内",
+  "5000 分钟内",
+  ">= 5000 分钟",
 ];
 
 const TimePlayed: FC = () => {
@@ -52,37 +52,37 @@ const TimePlayed: FC = () => {
     ] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     currentValue.forEach(([id, person, profile]) => {
-      // < 100 Minutes
-      if (profile.stats.time_played < 1 * 10000) {
+      // < 500 Minutes
+      if (profile.stats.time_played < 5 * 10000) {
         chartsValue[0] += 1;
-        // < 300 Minutes
-      } else if (profile.stats.time_played < 3 * 10000) {
+        // < 1000 Minutes
+      } else if (profile.stats.time_played < 10 * 10000) {
         chartsValue[1] += 1;
-        // < 500 Minutes
-      } else if (profile.stats.time_played < 5 * 10000) {
-        chartsValue[2] += 1;
-        // < 700 Minutes
-      } else if (profile.stats.time_played < 7 * 10000) {
-        chartsValue[3] += 1;
-        // < 900 Minutes
-      } else if (profile.stats.time_played < 9 * 10000) {
-        chartsValue[4] += 1;
-        // < 1100 Minutes
-      } else if (profile.stats.time_played < 11 * 10000) {
-        chartsValue[5] += 1;
-        // < 1300 Minutes
-      } else if (profile.stats.time_played < 13 * 10000) {
-        chartsValue[6] += 1;
         // < 1500 Minutes
       } else if (profile.stats.time_played < 15 * 10000) {
+        chartsValue[2] += 1;
+        // < 2000 Minutes
+      } else if (profile.stats.time_played < 20 * 10000) {
+        chartsValue[3] += 1;
+        // < 2500 Minutes
+      } else if (profile.stats.time_played < 25 * 10000) {
+        chartsValue[4] += 1;
+        // < 3000 Minutes
+      } else if (profile.stats.time_played < 30 * 10000) {
+        chartsValue[5] += 1;
+        // < 3500 Minutes
+      } else if (profile.stats.time_played < 35 * 10000) {
+        chartsValue[6] += 1;
+        // < 4000 Minutes
+      } else if (profile.stats.time_played < 40 * 10000) {
         chartsValue[7] += 1;
-        // < 1700 Minutes
-      } else if (profile.stats.time_played < 17 * 10000) {
+        // < 4500 Minutes
+      } else if (profile.stats.time_played < 45 * 10000) {
         chartsValue[8] += 1;
-        // < 1900 Minutes
-      } else if (profile.stats.time_played < 19 * 10000) {
+        // < 5000 Minutes
+      } else if (profile.stats.time_played < 50 * 10000) {
         chartsValue[9] += 1;
-        // > 1900 Minutes
+        // > 5000 Minutes
       } else {
         chartsValue[10] += 1;
       }
