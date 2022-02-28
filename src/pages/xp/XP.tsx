@@ -52,34 +52,34 @@ const XP: FC = () => {
 
     currentValue.forEach(([id, person, profile]) => {
       // < 1 0000 XP => 2 Starts
-      if (person.authority <= 1) {
+      if (person.authority < 1) {
         chartsValue[0] += 1;
         // < 5 0000 XP => 3 Starts
-      } else if (person.authority <= 5) {
+      } else if (person.authority < 5) {
         chartsValue[1] += 1;
         // < 10 0000 XP => 4 Starts
-      } else if (person.authority <= 10) {
+      } else if (person.authority < 10) {
         chartsValue[2] += 1;
         // < 100 0000 XP => 5 Starts
-      } else if (person.authority <= 100) {
+      } else if (person.authority < 100) {
         chartsValue[3] += 1;
         // < 200 0000 XP => 6 Starts
-      } else if (person.authority <= 200) {
+      } else if (person.authority < 200) {
         chartsValue[4] += 1;
         // < 300 0000 XP => 1 month
-      } else if (person.authority <= 300) {
+      } else if (person.authority < 300) {
         chartsValue[5] += 1;
         // < 400 0000 XP => 2 month
-      } else if (person.authority <= 400) {
+      } else if (person.authority < 400) {
         chartsValue[6] += 1;
         // < 500 0000 XP => 3 month
-      } else if (person.authority <= 500) {
+      } else if (person.authority < 500) {
         chartsValue[7] += 1;
         // < 750 0000 XP => 4 month
-      } else if (person.authority <= 750) {
+      } else if (person.authority < 750) {
         chartsValue[8] += 1;
         // < 1000 0000 XP => 5 month
-      } else if (person.authority <= 1000){
+      } else if (person.authority < 1000){
         chartsValue[9] += 1;
         // > 1000 0000 XP => 1 sun
       } else {
