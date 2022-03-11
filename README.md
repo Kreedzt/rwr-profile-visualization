@@ -101,6 +101,12 @@ pnpm build
 - XP 统计
 - 游玩时间统计
 
+## 其他项目
+
+- [RWR GFL 存档管理系统](https://github.com/Kreedzt/rwr-profile-web)
+- [RWR GFL 存档管理服务](https://github.com/Kreedzt/rwr-profile-server)
+- [RWR GFL 存档数据查询](https://github.com/Kreedzt/rwr-profile-stats)
+
 ## 协议
 
 - [GPLv3](https://opensource.org/licenses/GPL-3.0)
