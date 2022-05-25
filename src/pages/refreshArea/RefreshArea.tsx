@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-only
 import React, { FC, useEffect } from "react";
 import { Button } from "antd";
 import { useDataContext } from "../../context/DataContext";

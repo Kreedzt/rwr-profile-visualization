@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-only
 import React, { FC, useCallback, useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import { useDataContext } from "../../context/DataContext";

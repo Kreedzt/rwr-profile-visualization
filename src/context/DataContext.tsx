@@ -1,12 +1,13 @@
+// SPDX-License-Identifier: GPL-3.0-only
 import React, {
-  createContext,
-  FC,
-  MutableRefObject,
-  useCallback,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
+    createContext,
+    FC,
+    MutableRefObject,
+    useCallback,
+    useContext,
+    useMemo,
+    useRef,
+    useState,
 } from "react";
 import { Person } from "../models/person";
 import { Profile } from "../models/profile";
